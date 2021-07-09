@@ -1,4 +1,4 @@
-package discord.bot.mabihelper;
+package discord.bot.mabihelper.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
