@@ -1,8 +1,6 @@
-package discord.bot.mabihelper.spec.share;
+package discord.bot.mabiHelper.spec.share;
 
-import com.sun.beans.decoder.ValueObject;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 public class IdName {

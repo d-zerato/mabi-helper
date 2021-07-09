@@ -1,6 +1,6 @@
-package discord.bot.mabihelper.spec.master.keyword;
+package discord.bot.mabiHelper.spec.master.keyword;
 
-import discord.bot.mabihelper.spec.share.DomainEntity;
+import discord.bot.mabiHelper.spec.share.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
 

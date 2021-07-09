@@ -1,4 +1,4 @@
-package discord.bot.mabihelper.spec.share;
+package discord.bot.mabiHelper.spec.share;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package discord.bot.mabihelper.spec.master.quest;
+package discord.bot.mabiHelper.spec.master.quest;
 
 import lombok.Getter;
 

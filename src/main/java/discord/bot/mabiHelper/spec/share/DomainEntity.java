@@ -1,4 +1,4 @@
-package discord.bot.mabihelper.spec.share;
+package discord.bot.mabiHelper.spec.share;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,5 +32,10 @@ public class DomainEntity {
         //
         this.deleted = true;
         this.deletedAt = System.currentTimeMillis();
+    }
+
+    public void update() {
+        //
+        this.updatedAt = System.currentTimeMillis();
     }
 }

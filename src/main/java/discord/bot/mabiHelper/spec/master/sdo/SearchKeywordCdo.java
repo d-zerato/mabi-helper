@@ -1,7 +1,6 @@
-package discord.bot.mabihelper.spec.master.sdo;
+package discord.bot.mabiHelper.spec.master.sdo;
 
-import discord.bot.mabihelper.spec.master.keyword.SearchCategory;
-import discord.bot.mabihelper.spec.share.DomainEntity;
+import discord.bot.mabiHelper.spec.master.keyword.SearchCategory;
 import lombok.Getter;
 import lombok.Setter;
 
