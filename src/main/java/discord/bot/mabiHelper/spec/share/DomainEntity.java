@@ -3,16 +3,17 @@ package discord.bot.mabiHelper.spec.share;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
-public class DomainEntity {
+public abstract class DomainEntity {
     //
     private String id;
-    private long version;
+    private long entityVersion;
     private long createdAt;
     private long updatedAt;
     private boolean deleted;
@@ -21,11 +22,22 @@ public class DomainEntity {
     public DomainEntity() {
         //
         this.id = UUID.randomUUID().toString();
-        this.version = 0;
+        this.entityVersion = 0L;
         this.createdAt = System.currentTimeMillis();
         this.updatedAt = System.currentTimeMillis();
         this.deleted = false;
-        this.deletedAt = 0;
+        this.deletedAt = 0L;
+    }
+
+    public DomainEntity(String id) {
+        //
+        this();
+        this.id = id;
+    }
+
+    public DomainEntity(DomainEntity domainEntity) {
+        //
+        BeanUtils.copyProperties(domainEntity, this);
     }
 
     public void delete() {

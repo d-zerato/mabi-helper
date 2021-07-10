@@ -1,12 +1,12 @@
 spring:
+  application:
+    name: mabiHelper
   profiles:
     active: local
 
 ---
 spring:
-  config:
-    activate:
-      on-profile: local
+  profiles: local
   datasource:
     url: jdbc:mysql://49.50.174.34:3306/mabinogi?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: master
@@ -20,7 +20,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        hibernate.enable_lazy_load_no_trans: true
+        hibernate.enable_lazy_load_no_trans: trues
 
 server:
   port: 8080
@@ -33,9 +33,7 @@ logging:
 
 ---
 spring:
-  config:
-    activate:
-      on-profile: prd
+  profiles: prd
   datasource:
     url: jdbc:mysql://localhost:3306/mabinogi?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: master

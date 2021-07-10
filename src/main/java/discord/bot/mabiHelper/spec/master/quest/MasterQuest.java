@@ -49,4 +49,9 @@ public class MasterQuest extends DomainEntity {
         this.recommendGrade = recommendGrade;
         this.recommendKorName = recommendGrade.getKorName();
     }
+
+    public void setRecommendGrade(RecommendGrade recommendGrade) {
+        this.recommendGrade = recommendGrade;
+        this.recommendKorName = recommendGrade.getKorName();
+    }
 }

@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface MasterQuestRepository extends JpaRepository<MasterQuestJpo, String> {
     //
-    List<MasterQuestJpo> findAllByTalentTypeAndDeletedNotOrderByQuestNumberAsc(TalentType talentType);
+    List<MasterQuestJpo> findAllByTalentTypeAndDeletedFalseOrderByQuestNumberAsc(TalentType talentType);
+    List<MasterQuestJpo> findAllByTalentTypeAndQuestNumberAndDeletedFalseOrderByQuestNumberAsc(TalentType talentType, int questNumber);
 }

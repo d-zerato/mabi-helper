@@ -52,8 +52,17 @@ public class MasterQuestStoreLogic implements MasterQuestStore {
     public List<MasterQuest> retrieveAllByTalentType(TalentType talentType) {
         //
         return masterQuestRepository
-                .findAllByTalentTypeAndDeletedNotOrderByQuestNumberAsc(talentType)
+                .findAllByTalentTypeAndDeletedFalseOrderByQuestNumberAsc(talentType)
                 .stream().map(MasterQuestJpo::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MasterQuest> retrieveAllByTalentTypeAndQuestNumber(TalentType talentType, int questNumber) {
+        return masterQuestRepository
+                .findAllByTalentTypeAndQuestNumberAndDeletedFalseOrderByQuestNumberAsc(talentType, questNumber)
+                .stream()
+                .map(MasterQuestJpo::toDomain)
                 .collect(Collectors.toList());
     }
 }

@@ -9,13 +9,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
+
 import javax.persistence.*;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Table(name = "MASTER_QUEST")
 public class MasterQuestJpo extends DomainEntityJpo {
     //
@@ -30,11 +31,12 @@ public class MasterQuestJpo extends DomainEntityJpo {
     private String contents;
 
     @Enumerated(EnumType.STRING)
-    @Column(unique = false, nullable = false, columnDefinition = "varchar(50) defualt 'NORMAL' comment '추천 등급'")
+    @Column(unique = false, nullable = false, columnDefinition = "varchar(50) comment '추천 등급'")
     private RecommendGrade recommendGrade;
 
     public MasterQuestJpo(MasterQuest masterQuest) {
         //
+        super(masterQuest);
         BeanUtils.copyProperties(masterQuest, this);
     }
     

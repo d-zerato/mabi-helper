@@ -65,7 +65,7 @@ public class LogHeader {
         StringBuilder resultMessage = new StringBuilder();
 
         resultMessage.append("[").append(this.logId).append("]");
-        if (StringUtils.isNotEmpty(this.className)) {
+        if (StringUtil.isNotEmpty(this.className)) {
             resultMessage.append(":");
             resultMessage.append("[").append(this.className).append("]");
         }
@@ -87,12 +87,12 @@ public class LogHeader {
 
         resultMessage.append("[").append(this.logId).append("]");
 
-        if (StringUtils.isNotEmpty(this.className)) {
+        if (StringUtil.isNotEmpty(this.className)) {
             resultMessage.append(":");
             resultMessage.append("[").append(this.className).append("]");
         }
 
-        if (StringUtils.isNotEmpty(this.errorCode)) {
+        if (StringUtil.isNotEmpty(this.errorCode)) {
             resultMessage.append(":");
             resultMessage.append("[").append(this.errorCode).append("]");
         }

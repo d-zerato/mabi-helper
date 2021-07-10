@@ -2,11 +2,25 @@ package discord.bot.mabiHelper.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@SpringBootApplication
-@ComponentScan("discord.bot.mabiHelper")
+import javax.annotation.PostConstruct;
+import java.util.TimeZone;
+
+@SpringBootApplication(scanBasePackages = "discord.bot.mabiHelper")
+@EnableJpaRepositories("discord.bot.mabiHelper")
+@EntityScan("discord.bot.mabiHelper")
+@EnableSwagger2
 public class MabiHelperApplication {
+
+    @PostConstruct
+    public void started() {
+        //
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(MabiHelperApplication.class, args);
     }
