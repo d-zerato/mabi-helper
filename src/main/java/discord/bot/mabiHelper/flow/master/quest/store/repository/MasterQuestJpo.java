@@ -24,6 +24,9 @@ public class MasterQuestJpo extends DomainEntityJpo {
     @Column(unique = false, nullable = false, columnDefinition = "varchar(50) comment '재능 유형'")
     private TalentType talentType;
 
+    @Column(unique = false, nullable = true, columnDefinition = "varchar(50) comment '재능 유형 한글명'")
+    private String talentTypeKoName;
+
     @Column(unique = false, nullable = true, columnDefinition = "int(1) default 1 comment '퀘스트 번호'")
     private int questNumber;
 
@@ -38,6 +41,7 @@ public class MasterQuestJpo extends DomainEntityJpo {
         //
         super(masterQuest);
         BeanUtils.copyProperties(masterQuest, this);
+        this.setTalentTypeKoName(masterQuest.getTalentType().getTalentName());
     }
     
     public MasterQuest toDomain() {
