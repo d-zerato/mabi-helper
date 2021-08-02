@@ -4,6 +4,7 @@ import discord.bot.mabiHelper.flow.master.quest.store.repository.MasterQuestJpo;
 import discord.bot.mabiHelper.flow.master.quest.store.repository.MasterQuestRepository;
 import discord.bot.mabiHelper.spec.master.TalentType;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
+import discord.bot.mabiHelper.spec.master.quest.RecommendGrade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -59,8 +60,21 @@ public class MasterQuestStoreLogic implements MasterQuestStore {
 
     @Override
     public List<MasterQuest> retrieveAllByTalentTypeAndQuestNumber(TalentType talentType, int questNumber) {
+        //
         return masterQuestRepository
                 .findAllByTalentTypeAndQuestNumberAndDeletedFalseOrderByQuestNumberAsc(talentType, questNumber)
+                .stream()
+                .map(MasterQuestJpo::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MasterQuest> retrieveAllGroupByTalentTypeAndQuestNumber() {
+        //
+        return masterQuestRepository
+                .findQuestSummaries(RecommendGrade.WORST,
+                        RecommendGrade.NORMAL,
+                        RecommendGrade.BEST)
                 .stream()
                 .map(MasterQuestJpo::toDomain)
                 .collect(Collectors.toList());

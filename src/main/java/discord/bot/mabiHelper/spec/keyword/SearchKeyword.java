@@ -1,4 +1,4 @@
-package discord.bot.mabiHelper.spec.master.keyword;
+package discord.bot.mabiHelper.spec.keyword;
 
 import discord.bot.mabiHelper.spec.share.DomainEntity;
 import lombok.Getter;
@@ -9,30 +9,28 @@ import lombok.Setter;
 public class SearchKeyword extends DomainEntity {
     //
     private SearchCategory category;
-    private String type;
+    private KeywordType type;
     private String keyword;
 
     public SearchKeyword() {
         super();
         this.category = SearchCategory.NONE;
-        this.type = "";
+        this.type = this.category.getKeywordType();
         this.keyword = "";
     }
 
     public SearchKeyword(SearchCategory category,
                          String keyword) {
         //
-        this.category = category;
-        this.type = null;
+        super();
         this.keyword = keyword;
+        this.category = category;
+        this.type = this.category.getKeywordType();
     }
 
-    public SearchKeyword(SearchCategory category,
-                         String type,
-                         String keyword) {
+    public void setCategory(SearchCategory searchCategory) {
         //
-        this.category = category;
-        this.type = type;
-        this.keyword = keyword;
+        this.category = searchCategory;
+        this.type = this.category.getKeywordType();
     }
 }

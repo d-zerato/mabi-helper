@@ -3,10 +3,7 @@ package discord.bot.mabiHelper.resource.master;
 import discord.bot.mabiHelper.flow.master.MasterFlowService;
 import discord.bot.mabiHelper.spec.master.TalentType;
 import discord.bot.mabiHelper.spec.master.facade.MasterDiscordFacade;
-import discord.bot.mabiHelper.spec.master.facade.MasterResourceFacade;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
-import discord.bot.mabiHelper.spec.master.sdo.MasterQuestCdo;
-import discord.bot.mabiHelper.spec.master.sdo.MasterQuestUdo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,5 +30,12 @@ public class MasterDiscordResource implements MasterDiscordFacade {
                                                         @PathVariable(name = "number")int questNumber) {
         //
         return masterFlow.findAllByTalent(talentType);
+    }
+
+    @Override
+    @GetMapping("/quest/summary")
+    public List<MasterQuest> findAllSummariesByRecommend() {
+        //
+        return masterFlow.findAllSummariesByRecommend();
     }
 }

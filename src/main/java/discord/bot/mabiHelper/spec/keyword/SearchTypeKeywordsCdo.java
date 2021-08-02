@@ -1,6 +1,6 @@
-package discord.bot.mabiHelper.spec.master.sdo;
+package discord.bot.mabiHelper.spec.keyword;
 
-import discord.bot.mabiHelper.spec.master.keyword.SearchCategory;
+import discord.bot.mabiHelper.spec.keyword.SearchCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +11,5 @@ import java.util.List;
 public class SearchTypeKeywordsCdo {
     //
     private SearchCategory category;
-    private String type;
     private List<String> keywords;
 }

@@ -11,4 +11,5 @@ public interface MasterDiscordFacade {
     //
     List<MasterQuest> findAllByTalent(TalentType talentType);
     List<MasterQuest> findAllByTalentAndQuestNum(TalentType talentType, int questNumber);
+    List<MasterQuest> findAllSummariesByRecommend();
 }

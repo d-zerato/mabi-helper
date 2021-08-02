@@ -70,4 +70,10 @@ public class MasterQuestServiceLogic implements MasterQuestService {
         //
         return masterQuestStore.retrieveAllByTalentTypeAndQuestNumber(talentType, questNumber);
     }
+
+    @Override
+    public List<MasterQuest> findAllGroupByTalentTypeAndQuestNumber() {
+        //
+        return masterQuestStore.retrieveAllGroupByTalentTypeAndQuestNumber();
+    }
 }

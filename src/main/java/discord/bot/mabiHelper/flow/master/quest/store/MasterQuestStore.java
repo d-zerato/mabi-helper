@@ -15,4 +15,5 @@ public interface MasterQuestStore {
     MasterQuest retrieve(String id);
     List<MasterQuest> retrieveAllByTalentType(TalentType talentType);
     List<MasterQuest> retrieveAllByTalentTypeAndQuestNumber(TalentType talentType, int questNumber);
+    List<MasterQuest> retrieveAllGroupByTalentTypeAndQuestNumber();
 }

@@ -16,4 +16,5 @@ public interface MasterQuestService {
     List<MasterQuest> findAll();
     List<MasterQuest> findAllByTalentType(TalentType talentType);
     List<MasterQuest> findAllByTalentTypeAndQuestNumber(TalentType talentType, int questNumber);
+    List<MasterQuest> findAllGroupByTalentTypeAndQuestNumber();
 }

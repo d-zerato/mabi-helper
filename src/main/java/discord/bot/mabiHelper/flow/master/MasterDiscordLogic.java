@@ -28,4 +28,10 @@ public class MasterDiscordLogic implements MasterDiscordFacade {
         //
         return questService.findAllByTalentTypeAndQuestNumber(talentType, questNumber);
     }
+
+    @Override
+    public List<MasterQuest> findAllSummariesByRecommend() {
+        //
+        return questService.findAllGroupByTalentTypeAndQuestNumber();
+    }
 }
