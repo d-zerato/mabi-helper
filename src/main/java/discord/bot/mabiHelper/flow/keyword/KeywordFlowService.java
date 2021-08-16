@@ -52,7 +52,6 @@ public class KeywordFlowService extends KeywordDiscordLogic implements SearchKey
         List<SearchKeyword> duplicatedObject = keywordService.findAllByKeywordList(searchTypeKeywordsCdo.getKeywords());
         List<String> duplicatedKeyword = duplicatedObject.stream().map(SearchKeyword::getKeyword).collect(Collectors.toList());
 
-
         for (String keyword : searchTypeKeywordsCdo.getKeywords()) {
             // 중복 체크
             if (duplicatedKeyword.contains(keyword)) {
@@ -70,7 +69,7 @@ public class KeywordFlowService extends KeywordDiscordLogic implements SearchKey
     }
 
     @Override
-    public String modifyMasterQuest(String id, SearchKeywordCdo searchKeywordCdo) {
+    public String modifySearchKeyword(String id, SearchKeywordCdo searchKeywordCdo) {
         //
         SearchKeyword searchKeyword = this.findSearchKeywordById(id);
 
@@ -93,7 +92,7 @@ public class KeywordFlowService extends KeywordDiscordLogic implements SearchKey
     }
 
     @Override
-    public void removeMasterQuest(String id) {
+    public void removeSearchKeyword(String id) {
         //
         SearchKeyword searchKeyword = this.findSearchKeywordById(id);
 

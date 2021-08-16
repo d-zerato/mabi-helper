@@ -9,13 +9,11 @@ import lombok.Setter;
 public class SearchKeyword extends DomainEntity {
     //
     private SearchCategory category;
-    private KeywordType type;
     private String keyword;
 
     public SearchKeyword() {
         super();
         this.category = SearchCategory.NONE;
-        this.type = this.category.getKeywordType();
         this.keyword = "";
     }
 
@@ -25,12 +23,10 @@ public class SearchKeyword extends DomainEntity {
         super();
         this.keyword = keyword;
         this.category = category;
-        this.type = this.category.getKeywordType();
     }
 
     public void setCategory(SearchCategory searchCategory) {
         //
         this.category = searchCategory;
-        this.type = this.category.getKeywordType();
     }
 }

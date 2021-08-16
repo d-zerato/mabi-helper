@@ -1,6 +1,5 @@
 package discord.bot.mabiHelper.spec.keyword.sdo;
 
-import discord.bot.mabiHelper.spec.keyword.KeywordType;
 import discord.bot.mabiHelper.spec.keyword.SearchCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

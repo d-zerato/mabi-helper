@@ -13,8 +13,8 @@ public interface SearchKeywordResourceFacade {
     //
     String registerSearchKeyword(SearchKeywordCdo searchKeywordCdo);
     int registerSearchKeywords(SearchTypeKeywordsCdo searchTypeKeywordsCdo);
-    String modifyMasterQuest(String id, SearchKeywordCdo searchKeywordCdo);
-    void removeMasterQuest(String id);
+    String modifySearchKeyword(String id, SearchKeywordCdo searchKeywordCdo);
+    void removeSearchKeyword(String id);
 
     SearchKeyword findSearchKeywordById(String id);
 }
