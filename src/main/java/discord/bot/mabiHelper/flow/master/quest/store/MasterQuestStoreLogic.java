@@ -2,12 +2,14 @@ package discord.bot.mabiHelper.flow.master.quest.store;
 
 import discord.bot.mabiHelper.flow.master.quest.store.repository.MasterQuestJpo;
 import discord.bot.mabiHelper.flow.master.quest.store.repository.MasterQuestRepository;
-import discord.bot.mabiHelper.spec.master.TalentType;
+import discord.bot.mabiHelper.spec.master.talent.TalentType;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
 import discord.bot.mabiHelper.spec.master.quest.RecommendGrade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,11 +20,9 @@ public class MasterQuestStoreLogic implements MasterQuestStore {
     private MasterQuestRepository masterQuestRepository;
 
     @Override
-    public String create(MasterQuest masterQuest) {
+    public void create(MasterQuest masterQuest) {
         //
         masterQuestRepository.save(new MasterQuestJpo(masterQuest));
-
-        return masterQuest.getId();
     }
 
     @Override
@@ -71,6 +71,27 @@ public class MasterQuestStoreLogic implements MasterQuestStore {
     @Override
     public List<MasterQuest> retrieveAllGroupByTalentTypeAndQuestNumber() {
         //
+//        String query = ""+
+//                "select * " +
+//                "from ( " +
+//                "   select mq.talent_type, " +
+//                "       mq.quest_number, " +
+//                "       mq.recommend_grade " +
+//                "   from master_quest mq " +
+//                "   order by " +
+//                "       mq.talent_type, " +
+//                "       mq.quest_number, " +
+//                "       case " +
+//                "           when mq.recommend_grade = :first then 1 " +
+//                "           when mq.recommend_grade = :second then 2 " +
+//                "           when mq.recommend_grade = :thirds then 3 " +
+//                "       end) mq " +
+//                "group by mq.talent_type, mq.quest_number ";
+//
+//        List<MasterQuestJpo> quesJpotList = EntityManager
+//
+//        TypedQuery<MasterQuestJpo>
+
         return masterQuestRepository
                 .findQuestSummaries(RecommendGrade.WORST,
                         RecommendGrade.NORMAL,

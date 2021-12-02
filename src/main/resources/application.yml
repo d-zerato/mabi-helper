@@ -4,6 +4,11 @@ spring:
   profiles:
     active: local
 
+server:
+  servlet:
+    context-path: /api/mabinogi
+
+
 ---
 spring:
   profiles: local
@@ -27,9 +32,18 @@ server:
 
 logging:
   level:
-    root: info
-    discord.bot.mabihelper: debug
+    root: debug
+    com.zaxxer: info
+    okhttp3.internal: info
+    sun.rmi: info
+    org.springframework: info
+    springfox.documentation: info
+    org.apache: info
+    Validator: info
+    ConditionEvaluationReportLoggingListener: info
+    ConfigServletWebServerApplicationContext: info
     org.hibernate: info
+    discord.bot.mabihelper: debug
 
 ---
 spring:

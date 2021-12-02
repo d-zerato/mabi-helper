@@ -1,7 +1,6 @@
 package discord.bot.mabiHelper.flow.master;
 
 import discord.bot.mabiHelper.flow.master.quest.service.MasterQuestService;
-import discord.bot.mabiHelper.spec.master.facade.MasterDiscordFacade;
 import discord.bot.mabiHelper.spec.master.facade.MasterResourceFacade;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
 import discord.bot.mabiHelper.spec.master.sdo.MasterQuestCdo;

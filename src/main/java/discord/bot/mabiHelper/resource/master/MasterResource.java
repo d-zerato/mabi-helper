@@ -12,21 +12,21 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/v1/mabinogi/master")
+@RequestMapping("/v1/master")
 public class MasterResource implements MasterResourceFacade {
     //
     @Autowired
     private MasterFlowService masterFlow;
 
     @Override
-    @PostMapping("/quest")
+    @PostMapping
     public String registerMasterQuest(@RequestBody MasterQuestCdo masterQuestCdo) {
         //
         return masterFlow.registerMasterQuest(masterQuestCdo);
     }
 
     @Override
-    @PutMapping("/quest/{id}")
+    @PutMapping("/{id}")
     public void modifyMasterQuest(@PathVariable String id,
                                   @RequestBody MasterQuestUdo masterQuestUdo) {
 
@@ -35,21 +35,21 @@ public class MasterResource implements MasterResourceFacade {
     }
 
     @Override
-    @DeleteMapping("/quest/{id}")
+    @DeleteMapping("/{id}")
     public void removeMasterQuest(@PathVariable String id) {
         //
         masterFlow.removeMasterQuest(id);
     }
 
     @Override
-    @GetMapping("/quest/{id}")
-    public MasterQuest findMasterQuest(String id) {
+    @GetMapping("/{id}")
+    public MasterQuest findMasterQuest(@PathVariable String id) {
         //
         return masterFlow.findMasterQuest(id);
     }
 
     @Override
-    @GetMapping("/quest/all")
+    @GetMapping("/all")
     public List<MasterQuest> findAllMasterQuest() {
         //
         return masterFlow.findAllMasterQuest();

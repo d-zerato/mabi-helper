@@ -16,16 +16,15 @@ import java.util.TimeZone;
 @ComponentScan(basePackages = "discord.bot.mabiHelper")
 @EnableSwagger2
 public class MabiHelperApplication {
+    public static void main(String[] args) {
+        //
+        SpringApplication.run(MabiHelperApplication.class, args);
+    }
+
     //
     @PostConstruct
     public void started() {
         //
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-    }
-
-    public static void main(String[] args) {
-        //
-        SpringApplication.run(MabiHelperApplication.class, args);
-
     }
 }

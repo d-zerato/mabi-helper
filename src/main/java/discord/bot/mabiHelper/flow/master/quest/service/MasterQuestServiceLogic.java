@@ -1,7 +1,7 @@
 package discord.bot.mabiHelper.flow.master.quest.service;
 
 import discord.bot.mabiHelper.flow.master.quest.store.MasterQuestStore;
-import discord.bot.mabiHelper.spec.master.TalentType;
+import discord.bot.mabiHelper.spec.master.talent.TalentType;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,9 @@ public class MasterQuestServiceLogic implements MasterQuestService {
     @Override
     public String register(MasterQuest masterQuest) {
         //
-        return masterQuestStore.create(masterQuest);
+        masterQuestStore.create(masterQuest);
+
+        return masterQuest.getId();
     }
 
     @Override

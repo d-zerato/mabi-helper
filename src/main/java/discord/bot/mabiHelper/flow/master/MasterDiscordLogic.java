@@ -1,7 +1,7 @@
 package discord.bot.mabiHelper.flow.master;
 
 import discord.bot.mabiHelper.flow.master.quest.service.MasterQuestService;
-import discord.bot.mabiHelper.spec.master.TalentType;
+import discord.bot.mabiHelper.spec.master.talent.TalentType;
 import discord.bot.mabiHelper.spec.master.facade.MasterDiscordFacade;
 import discord.bot.mabiHelper.spec.master.quest.MasterQuest;
 import org.springframework.beans.factory.annotation.Autowired;

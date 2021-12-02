@@ -1,6 +1,6 @@
 package discord.bot.mabiHelper.spec.master.quest;
 
-import discord.bot.mabiHelper.spec.master.TalentType;
+import discord.bot.mabiHelper.spec.master.talent.TalentType;
 import discord.bot.mabiHelper.spec.share.DomainEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

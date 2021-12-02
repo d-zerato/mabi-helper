@@ -1,5 +1,9 @@
 # mabi-helper
 
+### swagger 정리
+swagger 3.0.0부터는 [springfox-boot-starter] 만으로 ui가 import 가능
+접근 url : domain/{context-path}/swagger-ui/
+
 ### 서비스 관리
 
 서비스 백그라운드 실행

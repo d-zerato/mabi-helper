@@ -4,11 +4,11 @@ import discord.bot.mabiHelper.discord.subLogic.CommandEventHandler;
 import discord.bot.mabiHelper.discord.subLogic.ErrorEventHandler;
 import discord.bot.mabiHelper.exception.ErrorMessage;
 import discord.bot.mabiHelper.exception.ParsingMessageException;
-import discord.bot.mabiHelper.flow.keyword.KeywordDiscordLogic;
+import discord.bot.mabiHelper.flow.simpleCommand.SimpleCommandDiscordLogic;
 import discord.bot.mabiHelper.spec.discord.DiscordMessage;
 import discord.bot.mabiHelper.spec.discord.ParsingMessage;
-import discord.bot.mabiHelper.spec.keyword.SearchCategory;
-import discord.bot.mabiHelper.spec.keyword.SearchKeyword;
+import discord.bot.mabiHelper.spec.simpleCommand.CommandType;
+import discord.bot.mabiHelper.spec.simpleCommand.SimpleCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class EventHandler {
     //
     @Autowired
-    private KeywordDiscordLogic keywordDiscordLogic;
+    private SimpleCommandDiscordLogic simpleCommandDiscordLogic;
 
     @Autowired
     private ErrorEventHandler errorEventHandler;
@@ -39,18 +39,18 @@ public class EventHandler {
             errorEventHandler.sendErrorMessage(discordMessage, ErrorMessage.DISCORD_EXCEPTION_100);
         }
 
-        SearchKeyword searchKeyword = keywordDiscordLogic.findSearchKeywordByKeyword(command);
+        SimpleCommand simpleCommand = simpleCommandDiscordLogic.findSimpleCommandByKeyword(command);
 
-        if (searchKeyword == null) {
+        if (simpleCommand == null) {
             errorEventHandler.sendErrorMessage(discordMessage, ErrorMessage.DISCORD_EXCEPTION_100);
         }
 
-        this.parsingMessage(searchKeyword, discordMessage);
+        this.parsingMessage(simpleCommand, discordMessage);
     }
 
-    private void parsingMessage(SearchKeyword searchKeyword, DiscordMessage discordMessage) {
+    private void parsingMessage(SimpleCommand simpleCommand, DiscordMessage discordMessage) {
         //
-        SearchCategory category = searchKeyword.getCategory();
+        CommandType category = simpleCommand.getCommandType();
 
         switch (category) {
             case CLEAR_MESSAGE:
