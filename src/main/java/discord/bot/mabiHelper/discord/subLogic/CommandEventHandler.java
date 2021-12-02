@@ -1,7 +1,7 @@
 package discord.bot.mabiHelper.discord.subLogic;
 
 import discord.bot.mabiHelper.exception.ErrorMessage;
-import discord.bot.mabiHelper.flow.simpleCommand.SimpleCommandDiscordLogic;
+import discord.bot.mabiHelper.flow.commandManagement.CommandManagementDiscordLogic;
 import discord.bot.mabiHelper.spec.discord.DiscordMessage;
 import discord.bot.mabiHelper.spec.discord.ParsingMessage;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,7 @@ import java.util.Optional;
 public class CommandEventHandler {
     //
     @Autowired
-    private SimpleCommandDiscordLogic simpleCommandDiscordLogic;
+    private CommandManagementDiscordLogic commandManagementDiscordLogic;
 
     @Autowired
     private MessageSendHelper messageSendHelper;

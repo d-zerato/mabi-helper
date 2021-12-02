@@ -1,4 +1,4 @@
-package discord.bot.mabiHelper.spec.simpleCommand;
+package discord.bot.mabiHelper.spec.commandManagement;
 
 import discord.bot.mabiHelper.spec.share.DomainEntity;
 import lombok.Getter;
@@ -6,19 +6,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SimpleCommand extends DomainEntity {
+public class CommandKeyword extends DomainEntity {
     //
     private String keyword;
     private CommandType commandType;
 
-    public SimpleCommand() {
+    public CommandKeyword() {
         super();
         this.commandType = CommandType.NONE;
         this.keyword = "";
     }
 
-    public SimpleCommand(CommandType commandType,
-                         String keyword) {
+    public CommandKeyword(CommandType commandType,
+                          String keyword) {
         //
         super();
         this.keyword = keyword;

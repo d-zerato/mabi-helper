@@ -1,5 +1,8 @@
-package discord.bot.mabiHelper.spec.simpleCommand;
+package discord.bot.mabiHelper.spec.commandManagement;
 
+import lombok.Getter;
+
+@Getter
 public enum CommandType {
     //
     NONE("none", "initialize Value"),

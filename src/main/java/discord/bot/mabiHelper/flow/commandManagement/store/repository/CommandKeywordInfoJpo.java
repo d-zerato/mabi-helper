@@ -1,7 +1,7 @@
-package discord.bot.mabiHelper.flow.simpleCommand.store.repository;
+package discord.bot.mabiHelper.flow.commandManagement.store.repository;
 
-import discord.bot.mabiHelper.spec.simpleCommand.CommandType;
-import discord.bot.mabiHelper.spec.simpleCommand.SimpleCommand;;
+import discord.bot.mabiHelper.spec.commandManagement.CommandKeyword;
+import discord.bot.mabiHelper.spec.commandManagement.CommandType;
 import discord.bot.mabiHelper.spec.share.DomainEntityJpo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +16,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "SIMPLE_COMMAND")
-public class SimpleCommandJpo extends DomainEntityJpo {
+@Table(name = "COMMAND_KEYWORD")
+public class CommandKeywordInfoJpo extends DomainEntityJpo {
     //
     @Enumerated(EnumType.STRING)
     @Column(unique = false, nullable = false, columnDefinition = "varchar(50) comment '명령어 유형'")
@@ -26,18 +26,18 @@ public class SimpleCommandJpo extends DomainEntityJpo {
     @Column(unique = true, nullable = false, columnDefinition = "varchar(50) comment '검색 문자'")
     private String keyword;
 
-    public SimpleCommandJpo(SimpleCommand simpleCommand) {
+    public CommandKeywordInfoJpo(CommandKeyword commandKeyword) {
         //
-        super(simpleCommand);
-        BeanUtils.copyProperties(simpleCommand, this);
+        super(commandKeyword);
+        BeanUtils.copyProperties(commandKeyword, this);
     }
 
-    public SimpleCommand toDomain() {
+    public CommandKeyword toDomain() {
         //
-        SimpleCommand simpleCommand = new SimpleCommand();
+        CommandKeyword commandKeyword = new CommandKeyword();
 
-        BeanUtils.copyProperties(this, simpleCommand);
+        BeanUtils.copyProperties(this, commandKeyword);
 
-        return simpleCommand;
+        return commandKeyword;
     }
 }

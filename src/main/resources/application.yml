@@ -43,6 +43,7 @@ logging:
     ConditionEvaluationReportLoggingListener: info
     ConfigServletWebServerApplicationContext: info
     org.hibernate: info
+    net.dv8tion.jda: info
     discord.bot.mabihelper: debug
 
 ---

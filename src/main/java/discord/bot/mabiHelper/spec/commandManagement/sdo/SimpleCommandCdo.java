@@ -1,6 +1,6 @@
-package discord.bot.mabiHelper.spec.simpleCommand.sdo;
+package discord.bot.mabiHelper.spec.commandManagement.sdo;
 
-import discord.bot.mabiHelper.spec.simpleCommand.CommandType;
+import discord.bot.mabiHelper.spec.commandManagement.CommandType;
 import lombok.Getter;
 import lombok.Setter;
 

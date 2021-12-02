@@ -1,19 +1,19 @@
 package discord.bot.mabiHelper.resource.simpleCommand;
 
-import discord.bot.mabiHelper.flow.simpleCommand.SimpleCommandFlowService;
-import discord.bot.mabiHelper.spec.simpleCommand.SimpleCommand;
-import discord.bot.mabiHelper.spec.simpleCommand.facade.SimpleCommandResourceFacade;
-import discord.bot.mabiHelper.spec.simpleCommand.sdo.SimpleCommandCdo;
-import discord.bot.mabiHelper.spec.simpleCommand.sdo.SimpleCommandsCdo;
+import discord.bot.mabiHelper.flow.commandManagement.CommandManagementFlowService;
+import discord.bot.mabiHelper.spec.commandManagement.CommandKeyword;
+import discord.bot.mabiHelper.spec.commandManagement.facade.CommandManagementResourceFacade;
+import discord.bot.mabiHelper.spec.commandManagement.sdo.SimpleCommandCdo;
+import discord.bot.mabiHelper.spec.commandManagement.sdo.SimpleCommandsCdo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/mabinogi/keyword")
-public class SimpleCommandResource implements SimpleCommandResourceFacade {
+public class CommandManagementResource implements CommandManagementResourceFacade {
     //
     @Autowired
-    private SimpleCommandFlowService keywordFlowService;
+    private CommandManagementFlowService keywordFlowService;
 
     @Override
     @PostMapping
@@ -46,7 +46,7 @@ public class SimpleCommandResource implements SimpleCommandResourceFacade {
 
     @Override
     @GetMapping("/{id}")
-    public SimpleCommand findSimpleCommandById(@PathVariable(name = "id") String id) {
+    public CommandKeyword findSimpleCommandById(@PathVariable(name = "id") String id) {
         //
         return keywordFlowService.findSimpleCommandById(id);
     }

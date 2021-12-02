@@ -16,3 +16,6 @@ swagger 3.0.0부터는 [springfox-boot-starter] 만으로 ui가 import 가능
 
 백그라운드 서비스 종료 
  - kill -9 <프로세스 아이디>
+
+### SlashEventHandler Sample
+https://github.com/DV8FromTheWorld/JDA/blob/development/src/examples/java/SlashBotExample.java
